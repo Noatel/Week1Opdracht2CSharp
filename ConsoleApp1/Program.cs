@@ -1,10 +1,13 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace ConsoleApp1
 {
     class Program
     {
-        public static int counter = 1;
+        public static IList<Question> AllQuestions = new List<Question>();
+
 
         static void Main(string[] args)
         {
@@ -13,38 +16,38 @@ namespace ConsoleApp1
             Category Muziek = new Category("Muziek");
             Category Dieren = new Category("Dieren");
 
-            Question Question1 = new Question("Wie had een hit met het nummer Relax, take it easy?", "Mika" , 3 , Muziek);
+            //Add 4 Questions, 2 with Multiple choice answers
+            Question Question1 = new Question() { Text = "Wie had een hit met het nummer Relax, take it easy?", Answer = "mika", Difficulty = 3, Category = Muziek };
+            Question Question2 = new Question() { Text = "Hebben Giraffen een blauwe tong?", Answer = "ja", Difficulty = 2, Category = Dieren };
 
-          
-            ChoiceQuestion Question2 = new ChoiceQuestion("Wat voor vorm heeft de aarde", "Donut", 2, Algemeen, false);
-            Question2.addChoice("Kubus", false);
-            Question2.addChoice("Rond", true);
-            Question2.addChoice("Plat", false);
+            ChoiceQuestion Question3 = new ChoiceQuestion() { Text = "Wat voor vorm heeft de aarde", Difficulty = 1, Category = Algemeen };
+            Question3.addChoice("kubus", false);
+            Question3.addChoice("rond", true);
+            Question3.addChoice("plat", false);
 
-            Question Question3 = new Question("Hebben Giraffen een blauwe tong?", "Ja", 1, Algemeen);
+            ChoiceQuestion Question4 = new ChoiceQuestion() { Text = "Bij welke temperatuur kookt water?", Difficulty = 3, Category = Algemeen };
+            Question4.addChoice("25", false);
+            Question4.addChoice("50", false);
+            Question4.addChoice("75", false);
+            Question4.addChoice("100", true);
 
+            //Add Questions to the array
+            AllQuestions.Add(Question1);
+            AllQuestions.Add(Question2);
+            AllQuestions.Add(Question3);
+            AllQuestions.Add(Question4);
 
-            askQuestion(Question1);
-            askQuestion(Question2);
-            askQuestion(Question3);
-        }
+            //LINQ Sort
+            var result = from s in AllQuestions
+                         orderby s.Difficulty
+                         select s;
 
-        public static void askQuestion(Question question)
-        {
-            Console.WriteLine("Vraag "+ counter + ":");
-            Console.WriteLine(question.Text);
-
-            if (question.GetType() == typeof(ChoiceQuestion)){
-                ChoiceQuestion choiceQuestion = question as ChoiceQuestion;
-                choiceQuestion.display();
-            } 
-
-            Console.WriteLine("Jouw antwoord: ");
-
-            string response = Console.ReadLine();
-
-            question.checkAnswer(response);
-            counter++;
+            //Foreach sorted question in the var Result
+            foreach(Question question in result)
+            {
+                //Ask a question
+                Question.askQuestion(question);
+            }
         }
     }
 }

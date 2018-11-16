@@ -9,16 +9,8 @@ namespace ConsoleApp1
         public bool Correct { get; set; }
         public List<string> Choices = new List<string>();
 
-        public ChoiceQuestion(string Text, string Answer, int Difficulty, Category Category, bool Correct) : base(Text, Answer, Difficulty, Category)
-        {
-            this.Correct = Correct;
-            Choices.Add(Answer.ToLower());
-        }
-
         public void addChoice(string Choice, bool Correct) {
-
             Choice = Choice.ToLower();
-
             Choices.Add(Choice);
 
             if(Correct){
