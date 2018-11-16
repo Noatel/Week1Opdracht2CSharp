@@ -14,6 +14,7 @@ namespace ConsoleApp1
             string response = Console.ReadLine();
 
             Console.WriteLine(q.checkAnswer(response));
+            Console.WriteLine("");
 
             ChoiceQuestion first = new ChoiceQuestion("Wat voor vorm heeft de aarde","Donut",false);
             first.addChoice("Kubus", false);
