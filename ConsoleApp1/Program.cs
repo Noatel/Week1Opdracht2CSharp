@@ -6,16 +6,18 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Vraag 1: ");
             Question q = new Question("Wat voor vorm heeft de aarde","Rond");
 
             Console.WriteLine(q.text);
-            Console.WriteLine("Your answer: ");
+            Console.WriteLine("Jouw antwoord: ");
 
             string response = Console.ReadLine();
 
             Console.WriteLine(q.checkAnswer(response));
-            Console.WriteLine("");
+            Console.Clear();
 
+            Console.WriteLine("Vraag 2: ");
             ChoiceQuestion first = new ChoiceQuestion("Wat voor vorm heeft de aarde","Donut",false);
             first.addChoice("Kubus", false);
             first.addChoice("Rond", true);
@@ -27,7 +29,7 @@ namespace ConsoleApp1
         public static void askQuestion(ChoiceQuestion q)
         {
             q.display();
-            Console.WriteLine("Your answer: ");
+            Console.WriteLine("Jouw antwoord: ");
 
             string response = Console.ReadLine();
 
