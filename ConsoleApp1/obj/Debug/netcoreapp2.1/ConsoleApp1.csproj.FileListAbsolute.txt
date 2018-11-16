@@ -1,0 +1,11 @@
+/Users/NoahTelussa/Code/CSharp/ConsoleApp1/ConsoleApp1/bin/Debug/netcoreapp2.1/ConsoleApp1.deps.json
+/Users/NoahTelussa/Code/CSharp/ConsoleApp1/ConsoleApp1/bin/Debug/netcoreapp2.1/ConsoleApp1.runtimeconfig.json
+/Users/NoahTelussa/Code/CSharp/ConsoleApp1/ConsoleApp1/bin/Debug/netcoreapp2.1/ConsoleApp1.runtimeconfig.dev.json
+/Users/NoahTelussa/Code/CSharp/ConsoleApp1/ConsoleApp1/bin/Debug/netcoreapp2.1/ConsoleApp1.dll
+/Users/NoahTelussa/Code/CSharp/ConsoleApp1/ConsoleApp1/bin/Debug/netcoreapp2.1/ConsoleApp1.pdb
+/Users/NoahTelussa/Code/CSharp/ConsoleApp1/ConsoleApp1/obj/Debug/netcoreapp2.1/ConsoleApp1.csprojAssemblyReference.cache
+/Users/NoahTelussa/Code/CSharp/ConsoleApp1/ConsoleApp1/obj/Debug/netcoreapp2.1/ConsoleApp1.csproj.CoreCompileInputs.cache
+/Users/NoahTelussa/Code/CSharp/ConsoleApp1/ConsoleApp1/obj/Debug/netcoreapp2.1/ConsoleApp1.AssemblyInfoInputs.cache
+/Users/NoahTelussa/Code/CSharp/ConsoleApp1/ConsoleApp1/obj/Debug/netcoreapp2.1/ConsoleApp1.AssemblyInfo.cs
+/Users/NoahTelussa/Code/CSharp/ConsoleApp1/ConsoleApp1/obj/Debug/netcoreapp2.1/ConsoleApp1.dll
+/Users/NoahTelussa/Code/CSharp/ConsoleApp1/ConsoleApp1/obj/Debug/netcoreapp2.1/ConsoleApp1.pdb

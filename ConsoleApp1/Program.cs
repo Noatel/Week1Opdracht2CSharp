@@ -6,7 +6,24 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            ChoiceQuestion first = new ChoiceQuestion("Wat voor vorm heeft de aarde","Donut",false);
+            first.addChoice("Kubus", false);
+            first.addChoice("Rond", true);
+            first.addChoice("Plat", false);
+
+           
+            askQuestion(first);
+
+        }
+
+        public static void askQuestion(ChoiceQuestion q)
+        {
+            q.display();
+            Console.WriteLine("Your answer: ");
+
+            string response = Console.ReadLine();
+
+            Console.WriteLine(q.checkAnswer(response));
         }
     }
 }
