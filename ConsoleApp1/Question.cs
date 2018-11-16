@@ -3,19 +3,35 @@ namespace ConsoleApp1
 {
     public class Question {
 
-        public string text { get; set; }
-        public string answer { get; set; }
+        public string Text { get; set; }
+        public string Answer { get; set; }
+        public int Difficulty { get; set; }
+        public Category Category { get; set; }
 
-        public Question(string text, string answer)
+        public Question(string Text, string Answer, int Difficulty, Category Category)
         {
-            this.text = text;
-            this.answer = answer;
+            this.Text = Text;
+            this.Answer = Answer.ToLower();
+            this.Difficulty = Difficulty;
+            this.Category = Category;
         }
 
-        public bool checkAnswer(string response)
+        public void checkAnswer(string Response)
         {
-            return response.Equals(answer);
+            Response = Response.ToLower();
+            if (Response.Equals(Answer))
+            {
+                Console.WriteLine("Correct!");
+                Console.WriteLine("Het antwoord was " + Answer + " en jij gaf als antwoord: " + Response);
+            } else
+            {
+                Console.WriteLine("Jammer!");
+                Console.WriteLine("Het antwoord was " + Answer + " en jij gaf als antwoord: " + Response);
+            }
+            Console.WriteLine("");
+
         }
-        
+
+
     }
 }
